@@ -1,7 +1,9 @@
 # TC3002B_IA
 
 **Descripción**  
-Selección de set de datos y preprocesado con técnicas de escalamiento.  
+Selección de set de datos, división en test y train, y preprocesado con técnicas de escalamiento.
+
+La división del dataset se realiza de manera aleatoria para un mejor rendimiento al entrenar el modelo.
 
 Los datos se extrajeron de Kaggle utilizando el dataset [Best Artworks of All Time](https://www.kaggle.com/datasets/ikarus777/best-artworks-of-all-time) por ikarus777.
 
