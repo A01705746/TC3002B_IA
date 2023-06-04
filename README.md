@@ -55,7 +55,18 @@ Sin embargo, se ajustó el hiper parámetro de *learning_rate* de 2e-5 a 1e-5.
 Con el fin de explrar más alternativas, se utilizó el mismo modelo anterior pero cambiando el *optimizer* por *Adam* para comparar resultados.
 
 ### Estado del arte
-X
+**Loss**
+* *[Categorical Cross Entropy](https://www.tensorflow.org/api_docs/python/tf/keras/metrics/categorical_crossentropy):*  Se utiliza para medir la discrepancia entre la distribución de probabilidades predicha por un modelo y la distribución de probabilidades real de las etiquetas de los datos. Cuanto menor sea el valor de la entropía cruzada, mejor se ajustará el modelo a los datos de entrenamiento.
+
+**[Optimizers](https://medium.com/analytics-vidhya/a-complete-guide-to-adam-and-rmsprop-optimizer-75f4502d83be)**
+* *[RMSprop](https://keras.io/api/optimizers/rmsprop/):* Es una mejora del algoritmo de descenso de gradiente estocástico (SGD) que adapta la tasa de aprendizaje para cada parámetro de forma individual. Utiliza una media móvil ponderada de los cuadrados de los gradientes anteriores para ajustar la tasa de aprendizaje. Esto permite un ajuste más rápido en las direcciones con gradientes grandes y una adaptación más lenta en las direcciones con gradientes pequeños. 
+*  *[Adam](https://keras.io/api/optimizers/adam/):* Es una combinación de los métodos de descenso de gradiente estocástico (SGD) con momentum y RMSprop. Adapta la tasa de aprendizaje para cada parámetro individual y también mantiene un promedio móvil de los gradientes anteriores similar a RMSprop.
+
+**Metrics**
+* *[Accuracy](https://keras.io/api/metrics/accuracy_metrics/):* Es la proporción de ejemplos clasificados correctamente en relación con el total de ejemplos, verifica la frecuencia en que una predicción coincide con el valor real. Se expresa como un valor entre 0 y 1
+
+**Model**
+* *[VGG16](https://keras.io/api/applications/vgg/):* Es un modelo preentrenado que consta de 16 capas de convolución. Se ha utilizado ampliamente como base para la extracción de características en tareas de clasificación de imágenes, cuenta con un rendimiento sólido en varios conjuntos de datos de referencia, como ImageNet.
 
 ### Resultados
 | Model          | test loss | test accuracy | train loss | train accuracy |
