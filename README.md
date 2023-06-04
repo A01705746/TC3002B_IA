@@ -54,6 +54,9 @@ Sin embargo, se ajustó el hiper parámetro de *learning_rate* de 2e-5 a 1e-5.
 ### Tercer modelo
 Con el fin de explrar más alternativas, se utilizó el mismo modelo anterior pero cambiando el *optimizer* por *Adam* para comparar resultados.
 
+### Estado del arte
+X
+
 ### Resultados
 | Model          | test loss | test accuracy | train loss | train accuracy |
 |----------------|-----------|---------------|------------|----------------|
@@ -67,4 +70,4 @@ Si bien *VGG16* con *Adam* tuvo un 51.76% de precisión en el entrenamiento, és
 
 Finalmente, aquí se observa la matriz confusión de las predicciones y etiquetas reales a través de un mapa de calor.
 
-<p align="center"><img width=100% src="https://github.com/Davidguzley/Movilidad-Chile/blob/main/Media/Heatmap.jpg"></p>
+<p align="center"><img width=50% src="https://github.com/A01705746/TC3002B_IA/blob/main/Media/matrix.png"></p>
