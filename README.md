@@ -25,7 +25,7 @@ Adicionalmente, se generó un segundo dataset para el género *Anime*, obtenido 
 ### Preprocesado de datos
 Dado que el primer dataset de artistas se encontraba en una estructura de *Artista/Obras*, fue requerida una reestructuración del dataset. Por lo que, utilizando el archivo de ***[labels.csv](https://github.com/A01705746/TC3002B_IA/blob/main/labels.csv)*** con el que venía el dataset, se filtraron los géneros de los artistas para su correcta asignación en la reestructura, de igual manera se eliminaron algunas imágenes parabalancear los géneros y no haya mucha disparidad.
 
-*Para un mejor apoyo visual de la estrucutra consultar el archivo **[labels_modified.xlsx](https://github.com/A01705746/TC3002B_IA/blob/main/labels_modified.csv)**, la documentación del código se encuentra en el archivo **[Data_Genre.ipynb](https://github.com/A01705746/TC3002B_IA/blob/main/Data_Genre.ipynb)***
+*Para un mejor apoyo visual de la estrucutra consultar el archivo **[labels_modified.xlsx](https://github.com/A01705746/TC3002B_IA/blob/main/labels_modified.xlsx)**, la documentación del código se encuentra en el archivo **[Data_Genre.ipynb](https://github.com/A01705746/TC3002B_IA/blob/main/Data_Genre.ipynb)***
 
 Posteriormente, una vez que las obras fueron organizadas por géneros, se realizó una división en test y train, así como un preprocesado con técnicas de escalamiento.
 
