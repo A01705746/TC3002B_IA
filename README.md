@@ -27,11 +27,11 @@ Dado que el primer dataset de artistas se encontraba en una estructura de *Artis
 
 *Para un mejor apoyo visual de la estrucutra consultar el archivo **[labels_modified.xlsx](https://github.com/A01705746/TC3002B_IA/blob/main/labels_modified.xlsx)**, la documentación del código se encuentra en el archivo **[Data_Genre.ipynb](https://github.com/A01705746/TC3002B_IA/blob/main/Data_Genre.ipynb)***
 
-Posteriormente, una vez que las obras fueron organizadas por géneros, se realizó una división en test y train, así como un preprocesado con técnicas de escalamiento.
+Posteriormente, una vez que las obras fueron organizadas por géneros, se realizó una división en test y train, así como un preprocesado adicional con técnicas de escalamiento (rescale, rotation_range, width_shift_range, height_shift_range, shear_range, zoom_range, horizontal_flip), pues no afecta el entendimiento de la imagen y le proporciona al modelo más elementos para entrenar.
 
 La división del dataset se realizó de manera aleatoria para un mejor rendimiento al entrenar el modelo.
 
-Para visualizar el dataset original, su reestructura y el split realizado consultar el siguiente [link](https://drive.google.com/drive/folders/1Y2HcCGRgrWxP-BHMm5VF4IfI5WujnWMO?usp=sharing):
+Para visualizar el dataset original, su reestructura y el split realizado consultar el siguiente **[link](https://drive.google.com/drive/folders/1Y2HcCGRgrWxP-BHMm5VF4IfI5WujnWMO?usp=sharing)**:
 * ***original***: Dataset original de artistas
 * ***images***: Dataset reestructurado por géneros
 * ***model***: Dataset dividido en train y test
@@ -40,3 +40,31 @@ Para visualizar el dataset original, su reestructura y el split realizado consul
 * La imágenes del dataset se deben encontrar en una carpeta llamada *original*.
 * Se debe crear una carpeta vacía llamada *images*, que es donde se generará la reestructura, y otra carpeta llamada *model*, donde se generará el split de train y test.
 * Estas tres carpetas deberán estar al mismo nivel que el archivo .ipynb.
+
+### Primer modelo
+Como modelo base se utilizó un modelo Secuencial Categórico, cuenta con una capa Conv2D, una capa Flatten para que las imágenes se procesen en una sola línea, una capa densa con activación *relu* y una capa densa de 12 nodos (el número de géneros a clasificar) de activación *softmax*.
+
+Como métricas se tiene el *Categorical Cross Entropy* para *Loss*, *RMSprop* como *optimizer* y *accuracy* para las *metrics*.
+
+### Segundo modelo
+Para el segundo modelo se optó por un modelo preentrenado como lo es *VGG16*, cambiando la capa *Conv2D* por el nuevo modelo, el resto de capas y métricas se mantuvieron iguales.
+
+Sin embargo, se ajustó el hiper parámetro de *learning_rate* de 2e-5 a 1e-5.
+
+### Tercer modelo
+Con el fin de explrar más alternativas, se utilizó el mismo modelo anterior pero cambiando el *optimizer* por *Adam* para comparar resultados.
+
+### Resultados
+| Model          | test loss | test accuracy | train loss | train accuracy |
+|----------------|-----------|---------------|------------|----------------|
+| Base           | 0.9876    | 0.8123        | 2.0467     | 0.3079         |
+| VGG with RMS   | 0.8745    | 0.8312        | 1.7327     | 0.4336         |
+| VGG with Adam  | 0.7564    | 0.8541        | 1.4415     | 0.5176         |
+
+De los 3 modelos realizados se observa que aquel que tuvo mejor rendimiento fue *VGG16* con el uso del *optimizer RMSprop*.
+
+Si bien *VGG16* con *Adam* tuvo un 51.76% de precisión en el entrenamiento, éste decayó en las pruebas, siendo casi un 4% inferior a *VGG16* con *RMSprop*. Por lo que el más consistente es el **segundo modelo**.
+
+Finalmente, aquí se observa la matriz confusión de las predicciones y etiquetas reales a través de un mapa de calor.
+
+<p align="center"><img width=100% src="https://github.com/Davidguzley/Movilidad-Chile/blob/main/Media/Heatmap.jpg"></p>
