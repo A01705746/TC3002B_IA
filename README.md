@@ -69,12 +69,13 @@ Con el fin de explorar más alternativas, se utilizó el mismo modelo anterior p
 * *[VGG16](https://keras.io/api/applications/vgg/):* Es un modelo preentrenado que consta de 16 capas de convolución. Se ha utilizado ampliamente como base para la extracción de características en tareas de clasificación de imágenes, cuenta con un rendimiento sólido en varios conjuntos de datos de referencia, como ImageNet.
 
 ### Resultados
+<p align="center">
 | Model          | test loss | test accuracy | train loss | train accuracy |
 |----------------|-----------|---------------|------------|----------------|
 | Base           | 0.9876    | 0.8123        | 2.0467     | 0.3079         |
 | VGG with RMS   | 0.8745    | 0.8312        | 1.7327     | 0.4336         |
 | VGG with Adam  | 0.7564    | 0.8541        | 1.4415     | 0.5176         |
-
+</p>
 De los 3 modelos realizados se observa que aquel que tuvo mejor rendimiento fue *VGG16* con el uso del *optimizer RMSprop*.
 
 Si bien *VGG16* con *Adam* tuvo un 51.76% de precisión en el entrenamiento, éste decayó en las pruebas, siendo casi un 4% inferior a *VGG16* con *RMSprop*. Por lo que el más consistente es el **segundo modelo**.
