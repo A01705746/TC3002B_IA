@@ -23,7 +23,7 @@ El dataset de las obras de arte se extrajo de Kaggle utilizando el dataset [Best
 Adicionalmente, se generó un segundo dataset para el género *Anime*, obtenido de diversas fuentes de terceros.
 
 ### Preprocesado de datos
-Dado que el primer dataset de artistas se encontraba en una estructura de *Artista/Obras*, fue requerida una reestructuración del dataset. Por lo que, utilizando el archivo de ***[labels.csv](https://github.com/A01705746/TC3002B_IA/blob/main/labels.csv)*** con el que venía el dataset, se filtraron los géneros de los artistas para su correcta asignación en la reestructura, de igual manera se eliminaron algunas imágenes parabalancear los géneros y no haya mucha disparidad.
+Dado que el primer dataset de artistas se encontraba en una estructura de *Artista/Obras*, fue requerida una reestructuración del dataset. Por lo que, utilizando el archivo de ***[labels.csv](https://github.com/A01705746/TC3002B_IA/blob/main/labels.csv)*** con el que venía el dataset, se filtraron los géneros de los artistas para su correcta asignación en la reestructura, de igual manera se eliminaron algunas imágenes para balancear los géneros y no haya mucha disparidad.
 
 *Para un mejor apoyo visual de la estrucutra consultar el archivo **[labels_modified.xlsx](https://github.com/A01705746/TC3002B_IA/blob/main/labels_modified.xlsx)**, la documentación del código se encuentra en el archivo **[Data_Genre.ipynb](https://github.com/A01705746/TC3002B_IA/blob/main/Data_Genre.ipynb)***
 
@@ -52,7 +52,7 @@ Para el segundo modelo se optó por un modelo preentrenado como lo es *VGG16*, c
 Sin embargo, se ajustó el hiper parámetro de *learning_rate* de 2e-5 a 1e-5.
 
 ### Tercer modelo
-Con el fin de explrar más alternativas, se utilizó el mismo modelo anterior pero cambiando el *optimizer* por *Adam* para comparar resultados.
+Con el fin de explorar más alternativas, se utilizó el mismo modelo anterior pero cambiando el *optimizer* por *Adam* para comparar resultados.
 
 ### Estado del arte
 **Loss**
