@@ -83,6 +83,6 @@ Finalmente, aquí se observa la matriz confusión de las predicciones y etiqueta
 
 Se puede ver una clara inclinación hacia los géneros de *Anime* y *Privitivism*, mayormete al *Anime*. Esto puede deberse nuevamente al *accuracy* relativamente bajo del modelo y a la complejidad de los datos. Además, tanto en las imágenes de *Anime* como en las de *Privitivism* se aprecia una mayor cantidad de colores vistosos y definidos, por lo que pueden ser fácilmente identificables y relacionables en comparación a los otros géneros con paletas de colores similares que pueden tender confundirse.
 
-<p align="center"><img width=50% src="https://github.com/A01705746/TC3002B_IA/blob/main/Media/matrix.png"></p>
+<p align="center"><img width=70% src="https://github.com/A01705746/TC3002B_IA/blob/main/Media/matrix.png"></p>
 
 Podríamos explorar modelos más complejos o incrementar el set de datos con el fin de hacer a cada clase más fácil de identificar y mejorar el rendimiento de modelo.
